@@ -23,9 +23,9 @@ export default function SideMenu() {
           Menu
         </SheetHeader>
 
-        <Separator className="mt-4 mb-4" />
+        <Separator className="mb-4 mt-4" />
 
-        <div className="h-full relative">
+        <div className="relative h-full">
           <Button variant="ghost" className="w-full justify-start gap-2">
             <HomeIcon size={16} />
             Inicio
@@ -40,7 +40,7 @@ export default function SideMenu() {
           </Button>
           <Button
             variant="ghost"
-            className="w-full justify-start absolute bottom-12 left-0 gap-2"
+            className="absolute bottom-12 left-0 w-full justify-start gap-2"
           >
             <LogInIcon size={16} />
             Login

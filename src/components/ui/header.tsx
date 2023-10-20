@@ -8,8 +8,8 @@ export default function Header() {
     <Card className="flex items-center justify-between p-[1.875rem]">
       <SideMenu />
 
-      <h1 className="font-bold text-lg">
-        <span className="from-[#5033c3] to-[#8162ff] bg-gradient-to-r bg-clip-text text-transparent">
+      <h1 className="text-lg font-bold">
+        <span className="bg-gradient-to-r from-[#5033c3] to-[#8162ff] bg-clip-text text-transparent">
           FSW
         </span>
         Store
