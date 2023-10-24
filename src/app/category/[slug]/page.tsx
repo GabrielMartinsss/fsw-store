@@ -3,7 +3,6 @@ import ProductItem from '@/components/ui/product-item'
 import { CATEGORY_ICON } from '@/constants/category-icons'
 import { computeProductTotalPrice } from '@/helpers/product'
 import { prismaClient } from '@/lib/prisma'
-import { Category } from '@prisma/client'
 
 interface CategoryProductsProps {
   params: {
