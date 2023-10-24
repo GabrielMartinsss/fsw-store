@@ -8,10 +8,17 @@ import {
   PercentIcon,
 } from 'lucide-react'
 import { Button } from './ui/button'
-import { Sheet, SheetContent, SheetHeader, SheetTrigger } from './ui/sheet'
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from './ui/sheet'
 import { Separator } from './ui/separator'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
+import Link from 'next/link'
 
 export default function SideMenu() {
   async function handleLoginClick() {
@@ -51,18 +58,28 @@ export default function SideMenu() {
         <Separator />
 
         <div className="flex-1">
-          <Button variant="ghost" className="w-full justify-start gap-2">
-            <HomeIcon size={16} />
-            Início
-          </Button>
+          <SheetClose asChild>
+            <Link href="/">
+              <Button variant="ghost" className="w-full justify-start gap-2">
+                <HomeIcon size={16} />
+                Início
+              </Button>
+            </Link>
+          </SheetClose>
+
           <Button variant="ghost" className="w-full justify-start gap-2">
             <PercentIcon size={16} />
             Ofertas
           </Button>
-          <Button variant="ghost" className="w-full justify-start gap-2">
-            <ListOrderedIcon size={16} />
-            Catálogo
-          </Button>
+
+          <SheetClose asChild>
+            <Link href="/catalog">
+              <Button variant="ghost" className="w-full justify-start gap-2">
+                <ListOrderedIcon size={16} />
+                Catálogo
+              </Button>
+            </Link>
+          </SheetClose>
         </div>
         {status === 'unauthenticated' && (
           <Button
