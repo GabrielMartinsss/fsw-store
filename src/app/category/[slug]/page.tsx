@@ -6,7 +6,9 @@ import { prismaClient } from '@/lib/prisma'
 import { Category } from '@prisma/client'
 
 interface CategoryProductsProps {
-  params: Category
+  params: {
+    slug: string
+  }
 }
 
 export default async function CategoryProducts({
