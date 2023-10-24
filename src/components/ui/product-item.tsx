@@ -8,8 +8,8 @@ interface ProductItemProps {
 }
 export default function ProductItem({ product }: ProductItemProps) {
   return (
-    <div className=" relative flex max-w-[170px] flex-col gap-4">
-      <div className="flex h-[170px] w-[170px] items-center justify-center rounded-lg bg-accent">
+    <div className=" relative flex flex-col gap-4">
+      <div className="flex h-[170px] w-full items-center justify-center rounded-lg bg-accent">
         <Image
           src={product.imageUrls[0]}
           height={0}
