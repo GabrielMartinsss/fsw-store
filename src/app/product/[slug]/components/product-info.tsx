@@ -3,12 +3,7 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ProductWithTotalPrice } from '@/helpers/product'
-import {
-  ArrowDownIcon,
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  TruckIcon,
-} from 'lucide-react'
+import { ArrowDownIcon, ArrowLeftIcon, ArrowRightIcon } from 'lucide-react'
 import { useState } from 'react'
 
 interface ProductInfoProps {
