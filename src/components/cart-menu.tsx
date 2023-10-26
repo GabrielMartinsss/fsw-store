@@ -12,7 +12,7 @@ export default function CartMenu() {
         </Button>
       </SheetTrigger>
 
-      <SheetContent>
+      <SheetContent className="w-[95%]">
         <Cart />
       </SheetContent>
     </Sheet>
