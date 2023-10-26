@@ -2,7 +2,6 @@ import { prismaClient } from '@/lib/prisma'
 import ProductImages from './components/product-images'
 import ProductInfo from './components/product-info'
 import { computeProductTotalPrice } from '@/helpers/product'
-import { Button } from '@/components/ui/button'
 import { TruckIcon } from 'lucide-react'
 import ProductList from '@/components/ui/product-list'
 import { Badge } from '@/components/ui/badge'
@@ -45,10 +44,6 @@ export default async function ProductDetailPage({
       <ProductImages name={product.name} imageUrls={product.imageUrls} />
 
       <ProductInfo product={computeProductTotalPrice(product)} />
-
-      <Button className="mx-5 mt-2 font-bold uppercase">
-        Adicionar ao carrinho
-      </Button>
 
       <Badge className="mx-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2">
         <div className="flex items-center gap-3">

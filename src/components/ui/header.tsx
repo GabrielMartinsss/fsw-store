@@ -1,8 +1,7 @@
-import { ShoppingCartIcon } from 'lucide-react'
-import { Button } from './button'
 import { Card } from './card'
-import SideMenu from '../sideMenu'
+import SideMenu from '../side-menu'
 import Link from 'next/link'
+import CartMenu from '../cart-menu'
 
 export default function Header() {
   return (
@@ -18,9 +17,7 @@ export default function Header() {
         </h1>
       </Link>
 
-      <Button variant="outline" size="icon">
-        <ShoppingCartIcon />
-      </Button>
+      <CartMenu />
     </Card>
   )
 }
