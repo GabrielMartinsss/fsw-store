@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { TruckIcon } from 'lucide-react'
 import ProductList from '@/components/ui/product-list'
 import { Badge } from '@/components/ui/badge'
+import SectionTitle from '@/components/ui/section-title'
 
 interface ProductDetailPageProps {
   params: {
@@ -67,7 +68,12 @@ export default async function ProductDetailPage({
         <p className="text-xs font-bold">Frete Grátis</p>
       </Badge>
 
-      {relatedProducts && <ProductList products={relatedProducts?.products} />}
+      <div>
+        <SectionTitle>Produtos recomendados</SectionTitle>
+        {relatedProducts && (
+          <ProductList products={relatedProducts?.products} />
+        )}
+      </div>
     </div>
   )
 }
