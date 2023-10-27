@@ -58,7 +58,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         <Button
           size="icon"
           variant="outline"
-          onClick={() => handleDecreaseQuantityClick()}
+          onClick={handleDecreaseQuantityClick}
         >
           <ArrowLeftIcon size={16} />
         </Button>
@@ -68,7 +68,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         <Button
           size="icon"
           variant="outline"
-          onClick={() => handleIncreaseQuantityClick()}
+          onClick={handleIncreaseQuantityClick}
         >
           <ArrowRightIcon size={16} />
         </Button>
