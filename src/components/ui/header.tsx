@@ -5,7 +5,7 @@ import CartMenu from '../cart-menu'
 
 export default function Header() {
   return (
-    <Card className="flex items-center justify-between p-[1.875rem]">
+    <Card className="sticky top-0 z-20 flex w-full items-center justify-between p-[1.875rem]">
       <SideMenu />
 
       <Link href="/">
