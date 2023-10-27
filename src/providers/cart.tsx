@@ -1,7 +1,7 @@
 'use client'
 
 import { ProductWithTotalPrice } from '@/helpers/product'
-import { ReactNode, createContext, useState } from 'react'
+import { ReactNode, createContext, useMemo, useState } from 'react'
 
 export interface CartProduct extends ProductWithTotalPrice {
   quantity: number
@@ -10,7 +10,7 @@ export interface CartProduct extends ProductWithTotalPrice {
 interface ICartContext {
   products: CartProduct[]
   cartTotalPrice: number
-  cartBasePrice: number
+  cartSubTotalPrice: number
   cartTotalDiscount: number
   addProductToCart: (product: CartProduct) => void
   decreaseProductToCart: (productId: string) => void
@@ -20,7 +20,7 @@ interface ICartContext {
 
 export const CartContext = createContext<ICartContext>({
   products: [],
-  cartBasePrice: 0,
+  cartSubTotalPrice: 0,
   cartTotalPrice: 0,
   cartTotalDiscount: 0,
   addProductToCart: () => {},
@@ -31,6 +31,20 @@ export const CartContext = createContext<ICartContext>({
 
 export default function CartProvider({ children }: { children: ReactNode }) {
   const [products, setProducts] = useState<CartProduct[]>([])
+
+  const subTotal = useMemo(() => {
+    return products.reduce((acc, product) =>  {
+      return acc + Number(product.basePrice) * product.quantity
+    }, 0)
+  }, [products])
+
+  const total = useMemo(() => {
+    return products.reduce((acc, product) => {
+      return acc + Number(product.totalPrice) * product.quantity
+    }, 0)
+  }, [products])
+
+  const totalDiscount = subTotal - total
 
   function addProductToCart(product: CartProduct) {
     const productIsAlreadyOnCart = products.some((cartProduct) => cartProduct.id === product.id)
@@ -92,9 +106,9 @@ export default function CartProvider({ children }: { children: ReactNode }) {
         decreaseProductToCart,
         increaseProductToCart,
         removeProductFromCart,
-        cartBasePrice: 0,
-        cartTotalPrice: 0,
-        cartTotalDiscount: 0,
+        cartSubTotalPrice: subTotal,
+        cartTotalPrice: total,
+        cartTotalDiscount: totalDiscount,
       }}
     >
       {children}
