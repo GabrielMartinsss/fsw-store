@@ -57,7 +57,7 @@ export default function SideMenu() {
 
         <Separator />
 
-        <div className="flex-1">
+        <div className="flex flex-1 flex-col">
           <SheetClose asChild>
             <Link href="/">
               <Button variant="ghost" className="w-full justify-start gap-2">
@@ -67,10 +67,14 @@ export default function SideMenu() {
             </Link>
           </SheetClose>
 
-          <Button variant="ghost" className="w-full justify-start gap-2">
-            <PercentIcon size={16} />
-            Ofertas
-          </Button>
+          <SheetClose asChild>
+            <Link href="/deals">
+              <Button variant="ghost" className="w-full justify-start gap-2">
+                <PercentIcon size={16} />
+                Ofertas
+              </Button>
+            </Link>
+          </SheetClose>
 
           <SheetClose asChild>
             <Link href="/catalog">
