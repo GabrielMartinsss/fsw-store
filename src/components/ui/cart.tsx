@@ -11,12 +11,22 @@ import { Button } from './button'
 import { createCheckout } from '@/actions/checkout'
 import { loadStripe } from '@stripe/stripe-js'
 import formatPrice from '@/helpers/format-price'
+import createOrder from '@/actions/order'
+import { signIn, useSession } from 'next-auth/react'
 
 export default function Cart() {
+  const { data } = useSession()
   const { products, cartSubTotalPrice, cartTotalDiscount, cartTotalPrice } =
     useContext(CartContext)
 
   async function handleFinishPurchaseClick() {
+    if (!data) {
+      signIn()
+
+      return
+    }
+    await createOrder(products, data.user.id)
+
     const checkout = await createCheckout(products)
 
     const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY)
