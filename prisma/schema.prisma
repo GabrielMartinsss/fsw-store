@@ -27,9 +27,38 @@ model Product {
   basePrice Decimal @db.Decimal(8, 2)
   imageUrls String[]
   discountPercentage Int @default(0)
+  orderProduct OrderProduct[]
   categoryId String
 
   category Category @relation(fields: [categoryId], references: [id])
+}
+
+model Order {
+  id String @id @default(uuid())
+  orderProducts OrderProduct[]
+  status OrderStatus @default(WAITING_FOR_PAYMENT)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  userId String
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+enum OrderStatus {
+  WAITING_FOR_PAYMENT
+  PAYMENT_CONFIRMED
+}
+
+model OrderProduct {
+  id String @id @default(uuid())
+  basePrice Decimal @db.Decimal(8, 2)
+  discountPercentage Int @default(0)
+  quantitu Int
+  productId String
+  orderId String
+
+  order Order @relation(fields: [orderId], references: [id])
+  product Product @relation(fields: [productId], references: [id])
 }
 
 model Account {
@@ -67,6 +96,7 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  order Order[]
 }
 
 model VerificationToken {
