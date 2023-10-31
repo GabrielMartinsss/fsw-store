@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Button } from './button'
 import { ArrowLeftIcon, ArrowRightIcon, TrashIcon } from 'lucide-react'
 import { useContext } from 'react'
+import formatPrice from '@/helpers/format-price'
 
 interface CartItemProps {
   product: CartProduct
@@ -27,6 +28,9 @@ export default function CartItem({ product }: CartItemProps) {
     removeProductFromCart(product.id)
   }
 
+  const formatedBasePrice = formatPrice(Number(product.basePrice))
+  const formatedTotalPrice = formatPrice(Number(product.totalPrice))
+
   return (
     <div className="flex justify-between">
       <div className="flex items-center gap-4">
@@ -45,13 +49,11 @@ export default function CartItem({ product }: CartItemProps) {
           <p className="text-xs">{product.name}</p>
 
           <div className="flex items-center gap-2">
-            <p className="text-bold text-sm">
-              R${product.totalPrice.toFixed(2)}
-            </p>
+            <p className="text-bold text-sm">{formatedTotalPrice}</p>
 
             {product.discountPercentage > 0 && (
               <p className="text-xs text-zinc-500 line-through">
-                R${Number(product.basePrice).toFixed(2)}
+                {formatedBasePrice}
               </p>
             )}
           </div>

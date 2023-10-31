@@ -10,6 +10,7 @@ import { ScrollArea } from './scroll-area'
 import { Button } from './button'
 import { createCheckout } from '@/actions/checkout'
 import { loadStripe } from '@stripe/stripe-js'
+import formatPrice from '@/helpers/format-price'
 
 export default function Cart() {
   const { products, cartSubTotalPrice, cartTotalDiscount, cartTotalPrice } =
@@ -23,6 +24,10 @@ export default function Cart() {
       sessionId: checkout.id,
     })
   }
+
+  const formatedCartSubTotalPrice = formatPrice(cartSubTotalPrice)
+  const formatedCartTotalPrice = formatPrice(cartTotalPrice)
+  const formatedTotalDiscount = formatPrice(cartTotalDiscount)
 
   return (
     <div className="flex h-full flex-col gap-8">
@@ -51,7 +56,7 @@ export default function Cart() {
           <Separator />
           <div className="flex items-center justify-between text-xs">
             <p>Subtotal</p>
-            <p>R$ {cartSubTotalPrice.toFixed(2)}</p>
+            <p>{formatedCartSubTotalPrice}</p>
           </div>
           <Separator />
           <div className="flex items-center justify-between text-xs">
@@ -61,12 +66,12 @@ export default function Cart() {
           <Separator />
           <div className="flex items-center justify-between text-xs">
             <p>Descontos</p>
-            <p>- R$ {cartTotalDiscount.toFixed(2)}</p>
+            <p>- {formatedTotalDiscount}</p>
           </div>
           <Separator />
           <div className="flex items-center justify-between text-sm font-bold">
             <p>Total</p>
-            <p>R$ {cartTotalPrice.toFixed(2)}</p>
+            <p>{formatedCartTotalPrice}</p>
           </div>
           <Button
             className="mt-8 font-bold uppercase"

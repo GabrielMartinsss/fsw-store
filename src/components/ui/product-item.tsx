@@ -3,11 +3,15 @@ import Image from 'next/image'
 import { Badge } from './badge'
 import { ArrowDown } from 'lucide-react'
 import Link from 'next/link'
+import formatPrice from '@/helpers/format-price'
 
 interface ProductItemProps {
   product: ProductWithTotalPrice
 }
 export default function ProductItem({ product }: ProductItemProps) {
+  const formatedTotalPrice = formatPrice(product.totalPrice)
+  const formatedBasePrice = formatPrice(Number(product.basePrice))
+
   return (
     <Link href={`/product/${product.slug}`}>
       <div className=" relative flex flex-col gap-4">
@@ -40,17 +44,13 @@ export default function ProductItem({ product }: ProductItemProps) {
           <div className="flex items-baseline gap-2 overflow-hidden whitespace-nowrap">
             {product.discountPercentage > 0 ? (
               <>
-                <p className="font-semibold">
-                  R$ {product.totalPrice.toFixed(2)}
-                </p>
+                <p className="font-semibold">{formatedTotalPrice}</p>
                 <p className="overflow-hidden text-ellipsis whitespace-nowrap text-xs line-through opacity-75">
-                  R$ {Number(product.basePrice).toFixed(2)}
+                  {formatedBasePrice}
                 </p>
               </>
             ) : (
-              <p className="font-semibold">
-                R$ {product.totalPrice.toFixed(2)}
-              </p>
+              <p className="font-semibold">{formatedTotalPrice}</p>
             )}
           </div>
         </div>
