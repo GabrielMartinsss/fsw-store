@@ -53,7 +53,7 @@ model OrderProduct {
   id String @id @default(uuid())
   basePrice Decimal @db.Decimal(8, 2)
   discountPercentage Int @default(0)
-  quantitu Int
+  quantity Int
   productId String
   orderId String
 
