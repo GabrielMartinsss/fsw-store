@@ -6,6 +6,7 @@ import {
   LogInIcon,
   MenuIcon,
   PercentIcon,
+  ShoppingBag,
 } from 'lucide-react'
 import { Button } from './ui/button'
 import {
@@ -63,6 +64,15 @@ export default function SideMenu() {
               <Button variant="ghost" className="w-full justify-start gap-2">
                 <HomeIcon size={16} />
                 Início
+              </Button>
+            </Link>
+          </SheetClose>
+
+          <SheetClose asChild>
+            <Link href="/orders">
+              <Button variant="ghost" className="w-full justify-start gap-2">
+                <ShoppingBag size={16} />
+                Meus pedidos
               </Button>
             </Link>
           </SheetClose>
