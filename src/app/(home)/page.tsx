@@ -38,6 +38,7 @@ export default async function Home() {
       <PromoBanner
         src="/banner_01_desk.png"
         alt="Ofertas imperdíveis! Até 55% de desconto esse mês!"
+        quality={100}
         className="hidden px-0 md:block"
       />
 

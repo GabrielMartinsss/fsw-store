@@ -10,7 +10,7 @@ export default function CategoyItem({ category }: CategoryItemProps) {
   return (
     <Link href={`/category/${category.slug}`}>
       <div className="flex flex-col">
-        <div className="flex h-[150px] w-full items-center justify-center rounded-tl-lg rounded-tr-lg bg-category-item-gradient">
+        <div className="flex h-[9.375rem] w-full items-center justify-center rounded-tl-lg rounded-tr-lg bg-category-item-gradient lg:h-[12.5rem]">
           <Image
             src={category.imageUrl}
             alt={category.name}
