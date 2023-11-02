@@ -29,13 +29,23 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col gap-8">
-      <PromoBanner src="/banner_01.png" alt="Até 55% de desconto esse mês!" />
+      <PromoBanner
+        src="/banner_01.png"
+        alt="Até 55% de desconto esse mês!"
+        className="md:hidden"
+      />
 
-      <div className="px-5">
+      <PromoBanner
+        src="/banner_01_desk.png"
+        alt="Ofertas imperdíveis! Até 55% de desconto esse mês!"
+        className="hidden px-0 md:block"
+      />
+
+      <div className="px-5 md:px-24">
         <Categories />
       </div>
 
-      <div className="px-1">
+      <div className="px-1 md:px-24">
         <SectionTitle>Ofertas</SectionTitle>
         <ProductList products={deals} />
       </div>
@@ -43,9 +53,21 @@ export default async function Home() {
       <PromoBanner
         src="/banner_mouses.png"
         alt="Até 55% de desconto em mouses!"
+        className="md:hidden"
       />
 
-      <div className="px-1">
+      <div className="flex gap-8 px-24">
+        <PromoBanner
+          src="/banner_mouses.png"
+          alt="Até 55% de desconto em mouses!"
+        />
+        <PromoBanner
+          src="/banner_fones.png"
+          alt="Até 20% de desconto em fones!"
+        />
+      </div>
+
+      <div className="px-1 md:px-24">
         <SectionTitle>Teclados</SectionTitle>
         <ProductList products={keyborads} />
       </div>
@@ -53,9 +75,16 @@ export default async function Home() {
       <PromoBanner
         src="/banner_fones.png"
         alt="Até 20% de desconto em fones!"
+        className="md:hidden"
       />
 
-      <div className="px-1">
+      <PromoBanner
+        src="/banner_frete_gratis.png"
+        alt="Até 20% de desconto em fones!"
+        className="hidden md:block md:px-24"
+      />
+
+      <div className="px-1 md:px-24">
         <SectionTitle>Mouses</SectionTitle>
         <ProductList products={mouses} />
       </div>
