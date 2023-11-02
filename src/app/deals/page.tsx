@@ -14,7 +14,7 @@ export default async function DealsPage() {
   })
 
   return (
-    <div className="space-y-8 p-5">
+    <div className="space-y-8 p-5 md:px-24">
       <Badge
         className="w-fit gap-1 border-2 border-primary px-3 py-[0.375rem] text-base uppercase"
         variant="outline"
@@ -22,7 +22,7 @@ export default async function DealsPage() {
         <PercentIcon size={16} />
         Ofertas
       </Badge>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-2 gap-8 md:flex md:flex-wrap">
         {deals.map((product) => (
           <ProductItem
             key={product.id}
