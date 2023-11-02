@@ -7,8 +7,8 @@ export default function CartMenu() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="outline" size="icon">
-          <ShoppingCartIcon />
+        <Button variant="outline" className="h-9 w-9 p-2">
+          <ShoppingCartIcon size={20} />
         </Button>
       </SheetTrigger>
 
