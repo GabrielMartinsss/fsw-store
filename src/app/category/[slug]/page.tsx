@@ -41,6 +41,7 @@ export default async function CategoryProducts({
           <ProductItem
             key={product.id}
             product={computeProductTotalPrice(product)}
+            className="md:min-w-[12rem] md:max-w-[12rem]"
           />
         ))}
       </div>

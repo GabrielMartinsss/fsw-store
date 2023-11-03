@@ -40,28 +40,32 @@ export default async function ProductDetailPage({
   if (!product) return null
 
   return (
-    <div className="flex flex-col gap-8">
-      <ProductImages name={product.name} imageUrls={product.imageUrls} />
+    <div className="flex flex-col gap-8 md:px-24">
+      <div className="space-y-8 md:flex md:gap-8 md:space-y-0 lg:h-[43.625rem]">
+        <ProductImages name={product.name} imageUrls={product.imageUrls} />
 
-      <ProductInfo product={computeProductTotalPrice(product)} />
+        <div className="space-y-8 md:rounded-lg md:bg-accent md:px-5 md:py-10">
+          <ProductInfo product={computeProductTotalPrice(product)} />
 
-      <Badge className="mx-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2">
-        <div className="flex items-center gap-3">
-          <TruckIcon />
+          <Badge className="mx-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2 md:bg-[#2A2A2A]">
+            <div className="flex items-center gap-3">
+              <TruckIcon />
 
-          <div className="flex flex-col">
-            <p className="text-xs font-normal">
-              Entrega via <span className="font-bold"> FSPacket® </span>
-            </p>
+              <div className="flex flex-col">
+                <p className="text-xs font-normal">
+                  Entrega via <span className="font-bold"> FSPacket® </span>
+                </p>
 
-            <p className="text-xs font-normal text-[#8162FF]">
-              Envio para <span className="font-bold">todo Brasil</span>
-            </p>
-          </div>
+                <p className="text-xs font-normal text-[#8162FF]">
+                  Envio para <span className="font-bold">todo Brasil</span>
+                </p>
+              </div>
+            </div>
+
+            <p className="text-xs font-bold">Frete Grátis</p>
+          </Badge>
         </div>
-
-        <p className="text-xs font-bold">Frete Grátis</p>
-      </Badge>
+      </div>
 
       <div>
         <SectionTitle>Produtos recomendados</SectionTitle>

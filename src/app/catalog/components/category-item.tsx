@@ -17,7 +17,7 @@ export default function CategoyItem({ category }: CategoryItemProps) {
             width={0}
             height={0}
             sizes="100vw"
-            className="h-auto max-h-[70%] w-auto max-w-[80%]"
+            className="h-auto max-h-[70%] min-h-[8rem] w-auto max-w-[80%] object-contain"
             style={{
               objectFit: 'contain',
             }}

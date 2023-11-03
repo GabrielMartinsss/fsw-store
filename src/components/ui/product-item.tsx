@@ -4,18 +4,25 @@ import { Badge } from './badge'
 import { ArrowDown } from 'lucide-react'
 import Link from 'next/link'
 import formatPrice from '@/helpers/format-price'
+import { twMerge } from 'tailwind-merge'
 
 interface ProductItemProps {
   product: ProductWithTotalPrice
+  className?: string
 }
-export default function ProductItem({ product }: ProductItemProps) {
+export default function ProductItem({ product, className }: ProductItemProps) {
   const formatedTotalPrice = formatPrice(product.totalPrice)
   const formatedBasePrice = formatPrice(Number(product.basePrice))
 
   return (
     <Link href={`/product/${product.slug}`}>
       <div className=" relative flex flex-col gap-4">
-        <div className="flex h-[10.625rem] min-h-[10.625rem] w-full items-center justify-center rounded-lg bg-accent md:min-w-[12rem] md:max-w-[12rem]">
+        <div
+          className={twMerge(
+            'flex h-[10.625rem] min-h-[10.625rem] w-full items-center justify-center rounded-lg bg-accent',
+            className,
+          )}
+        >
           <Image
             src={product.imageUrls[0]}
             height={0}
