@@ -36,18 +36,22 @@ export default function OrderItem({ order, index }: OrderItemProps) {
     <Card>
       <Accordion type="single" className="w-full" collapsible>
         <AccordionItem value={order.id} className="px-5">
-          <AccordionTrigger>
+          <AccordionTrigger className="gap-10">
             <div className="flex flex-col gap-1 text-left">
               <p className="text-sm font-bold uppercase">Número do pedido</p>
               <span className="text-xs font-normal text-zinc-500">{`${createOrderNumber(
                 index + 1,
               )}`}</span>
             </div>
+            <OrderItemHeader
+              order={order}
+              className="hidden text-left md:flex md:flex-1"
+            />
           </AccordionTrigger>
 
           <AccordionContent>
             <main className="space-y-5">
-              <OrderItemHeader order={order} />
+              <OrderItemHeader order={order} className="md:hidden" />
 
               <Separator />
 

@@ -29,16 +29,21 @@ export default function OrderProductItem({
         />
       </div>
 
-      <div className="flex h-[4.8125rem] flex-1 flex-col justify-between">
-        <p className="rounded-sm bg-accent px-4 text-center text-[0.625rem]">
-          Vendido e entregue por: <span className="font-bold">FWS Store</span>
-        </p>
+      <div className="flex h-[4.8125rem] flex-1 flex-col justify-between md:flex-row md:items-center">
+        <div className="space-y-3">
+          <p className="rounded-sm bg-accent px-4 text-center text-[0.625rem] md:w-fit ">
+            Vendido e entregue por: <span className="font-bold">FWS Store</span>
+          </p>
 
-        <p className="text-xs">{orderProduct.product.name}</p>
+          <p className="text-xs">{orderProduct.product.name}</p>
+          <p className="hidden text-xs text-zinc-400 md:block">
+            Qtd: {orderProduct.quantity}
+          </p>
+        </div>
 
         <div className="flex items-baseline justify-between">
           {orderProduct.discountPercentage > 0 ? (
-            <div className="flex items-baseline gap-2">
+            <div className="flex items-baseline gap-2 md:flex-col md:items-end md:gap-1">
               <p className="font-bold">
                 {formatPrice(Number(productWithTotalPrice.totalPrice))}{' '}
               </p>
@@ -52,7 +57,9 @@ export default function OrderProductItem({
             </p>
           )}
 
-          <p className="text-xs text-zinc-400">Qtd: {orderProduct.quantity}</p>
+          <p className="text-xs text-zinc-400 md:hidden">
+            Qtd: {orderProduct.quantity}
+          </p>
         </div>
       </div>
     </div>

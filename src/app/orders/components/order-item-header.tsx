@@ -1,5 +1,6 @@
 import { Prisma } from '@prisma/client'
 import { format } from 'date-fns'
+import { twMerge } from 'tailwind-merge'
 
 interface OrderItemHeaderProps {
   order: Prisma.OrderGetPayload<{
@@ -7,13 +8,17 @@ interface OrderItemHeaderProps {
       orderProducts: true
     }
   }>
+  className: string
 }
 
-export default function OrderItemHeader({ order }: OrderItemHeaderProps) {
+export default function OrderItemHeader({
+  order,
+  className,
+}: OrderItemHeaderProps) {
   return (
-    <div className="flex flex-col">
+    <div className={twMerge('flex max-w-[684px] flex-col', className)}>
       <div className="flex justify-between">
-        <div className="text-xs font-bold">
+        <div className="w-[100px] text-xs font-bold">
           <p className="uppercase">Status</p>
           <span className="text-[#8162ff]">
             {order.status === 'PAYMENT_CONFIRMED' ? 'Pago' : 'Pgto. pendente'}
