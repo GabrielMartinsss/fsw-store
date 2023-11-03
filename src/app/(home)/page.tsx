@@ -3,6 +3,7 @@ import { prismaClient } from '@/lib/prisma'
 import ProductList from '@/components/ui/product-list'
 import SectionTitle from '@/components/ui/section-title'
 import PromoBanner from './components/promo-banner'
+import Search from './components/search'
 
 export default async function Home() {
   const deals = await prismaClient.product.findMany({
@@ -27,8 +28,12 @@ export default async function Home() {
     },
   })
 
+  const products = await prismaClient.product.findMany({})
+
   return (
     <div className="flex flex-col gap-8">
+      <Search products={products} />
+
       <PromoBanner
         src="/banner_01.png"
         alt="Até 55% de desconto esse mês!"
