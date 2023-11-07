@@ -20,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} bg-background dark:bg-dark-background`}
+      >
         <div className="flex h-full flex-col">
           <AuthProvider>
             <CartProvider>

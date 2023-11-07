@@ -8,12 +8,12 @@ import LoginMenu from './login-menu'
 
 export default function Header() {
   return (
-    <header className="relative z-10 my-16 bg-background">
-      <Card className="fixed left-0 right-0 top-0 flex w-full items-center justify-between rounded-none p-[1.875rem] md:px-24">
+    <header className="relative z-10 my-16 bg-background text-accent dark:bg-dark-background dark:text-white">
+      <Card className="fixed left-0 right-0 top-0 flex w-full items-center justify-between rounded-none border-none bg-background p-[1.875rem] dark:bg-dark-background md:px-24">
         <SideMenu />
 
         <Link href="/">
-          <h1 className="text-lg font-bold md:text-2xl">
+          <h1 className="text-lg font-bold  md:text-2xl">
             <span className="bg-gradient-to-r from-[#5033c3] to-[#8162ff] bg-clip-text text-transparent">
               FSW
             </span>

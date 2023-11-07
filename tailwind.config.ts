@@ -29,11 +29,6 @@ module.exports = {
         'dark-primary': '#5033C3',
         'light-accent': '#e8e8e8',
       },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
       keyframes: {
         'accordion-down': {
           from: { height: 0 },
