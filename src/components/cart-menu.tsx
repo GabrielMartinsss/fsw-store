@@ -12,7 +12,7 @@ export default function CartMenu() {
         </Button>
       </SheetTrigger>
 
-      <SheetContent className="w-[95%]">
+      <SheetContent className="w-[95%] border-light-accent bg-background text-accent dark:border-accent dark:bg-dark-background dark:text-white">
         <Cart />
       </SheetContent>
     </Sheet>

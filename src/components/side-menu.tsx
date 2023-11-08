@@ -40,7 +40,10 @@ export default function SideMenu() {
           </Button>
         </SheetTrigger>
 
-        <SheetContent side="left" className="flex flex-col">
+        <SheetContent
+          side="left"
+          className="dark:bg-dark-background border-light-accent flex flex-col bg-background text-accent dark:border-accent dark:text-white"
+        >
           <SheetHeader className="text-left text-lg font-semibold">
             {status === 'authenticated' && data?.user && (
               <div className="flex items-center gap-2">

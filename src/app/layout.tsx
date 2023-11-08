@@ -19,9 +19,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="">
       <body
-        className={`${inter.className} dark:bg-dark-background bg-background`}
+        className={`${inter.className} bg-background dark:bg-dark-background`}
       >
         <div className="flex h-full flex-col">
           <AuthProvider>
