@@ -31,7 +31,7 @@ export default async function Home() {
   const products = await prismaClient.product.findMany({})
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 text-accent dark:text-white">
       <Search products={products} />
 
       <PromoBanner
@@ -62,7 +62,7 @@ export default async function Home() {
         className="md:hidden"
       />
 
-      <div className="flex gap-8 px-24">
+      <div className=" hidden gap-8 px-24 md:grid md:grid-cols-2">
         <PromoBanner
           src="/banner_mouses.png"
           alt="Até 55% de desconto em mouses!"

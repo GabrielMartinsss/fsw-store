@@ -19,7 +19,7 @@ export default function ProductItem({ product, className }: ProductItemProps) {
       <div className=" relative flex flex-col gap-4">
         <div
           className={twMerge(
-            'flex h-[10.625rem] min-h-[10.625rem] w-full items-center justify-center rounded-lg bg-accent',
+            'flex h-[10.625rem] min-h-[10.625rem] w-full items-center justify-center rounded-lg bg-light-accent dark:bg-accent',
             className,
           )}
         >
@@ -37,7 +37,7 @@ export default function ProductItem({ product, className }: ProductItemProps) {
         </div>
 
         {product.discountPercentage > 0 && (
-          <Badge className="absolute left-2 top-2 px-2 py-[2px]">
+          <Badge className="absolute left-2 top-2 px-2 py-[2px] text-white">
             <ArrowDown size={14} />
             {product.discountPercentage} %
           </Badge>
