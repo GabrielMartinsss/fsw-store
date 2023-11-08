@@ -1,7 +1,7 @@
 'use client'
 
 import { Input } from '@/components/ui/input'
-import { Table, TableBody, TableRow } from '@/components/ui/table'
+import { Table, TableBody, TableCell, TableRow } from '@/components/ui/table'
 import { Product } from '@prisma/client'
 import { SearchIcon } from 'lucide-react'
 import Link from 'next/link'
@@ -16,15 +16,15 @@ export default function Search({ products }: SearchProps) {
 
   return (
     <div className="fixed left-[50%] top-28 z-40 flex translate-x-[-50%] flex-col gap-1 ">
-      <div className=" flex w-[22rem] items-center gap-5 rounded-md bg-accent px-3 outline-2 focus-within:outline md:w-[30rem]">
+      <div className=" flex w-[22rem] items-center gap-5 rounded-md bg-light-accent px-3 shadow-md outline-2 dark:bg-accent md:w-[30rem]">
         <Input
           placeholder="Pesquisar produto"
           value={search === null ? '' : search}
           onChange={(ev) => setSearch(ev.target.value)}
-          className="outline-none"
+          className="border-none bg-transparent outline-none dark:text-white"
         />
 
-        <SearchIcon size={16} />
+        <SearchIcon size={16} className="dark:text-white" />
       </div>
 
       {search && (
@@ -38,10 +38,14 @@ export default function Search({ products }: SearchProps) {
               )
               .map((product) => (
                 <TableRow
-                  className="border-zinc-700 bg-accent"
+                  className=" border-light-active-accent bg-light-accent dark:border-zinc-700 dark:bg-accent dark:text-white"
                   key={product.slug}
                 >
-                  <Link href={`/product/${product.slug}`}>{product.name}</Link>
+                  <TableCell className="mt-4 rounded-lg px-3 py-1">
+                    <Link href={`/product/${product.slug}`}>
+                      {product.name}
+                    </Link>
+                  </TableCell>
                 </TableRow>
               ))}
           </TableBody>

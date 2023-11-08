@@ -28,6 +28,7 @@ module.exports = {
         'dark-background': '#0b0b0b',
         'dark-primary': '#5033C3',
         'light-accent': '#e8e8e8',
+        'light-active-accent': '#b8b8b8',
       },
       keyframes: {
         'accordion-down': {
