@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.className} bg-background dark:bg-dark-background`}
+        className={`${inter.className} dark:bg-dark-background bg-background`}
       >
         <div className="flex h-full flex-col">
           <AuthProvider>

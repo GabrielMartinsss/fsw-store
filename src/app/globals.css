@@ -3,6 +3,9 @@
 @tailwind utilities;
  
 @layer base {
+  * {
+    @apply border-accent
+  }
   body {
     @apply h-screen;
   }
