@@ -37,17 +37,17 @@ export default function LoginMenu() {
           </Button>
         </PopoverTrigger>
 
-        <PopoverContent className="mr-5 w-fit">
+        <PopoverContent className="mr-5 w-fit border-light-accent bg-background dark:border-zinc-800 dark:bg-accent dark:text-white">
           {status === 'authenticated' && (
             <div className="flex flex-col items-center justify-center">
               <p className="text-sm ">{data.user.name}</p>
               <p className="text-xs text-zinc-500 ">{data.user.email}</p>
               <Button
                 variant="ghost"
-                className="gap-2 text-red-500 hover:text-red-500 "
+                className="gap-2 text-red-500 dark:hover:bg-zinc-800"
                 onClick={handleLogoutClick}
               >
-                <LogInIcon size={16} className="text-red-500" />
+                <LogInIcon size={16} />
                 Logout
               </Button>
             </div>
