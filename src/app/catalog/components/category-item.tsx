@@ -23,7 +23,7 @@ export default function CategoyItem({ category }: CategoryItemProps) {
             }}
           />
         </div>
-        <div className="rounded-bl-lg rounded-br-lg bg-accent py-2">
+        <div className="rounded-bl-lg rounded-br-lg bg-light-accent py-2 dark:bg-accent">
           <p className="text-center text-sm font-semibold">{category.name}</p>
         </div>
       </div>
