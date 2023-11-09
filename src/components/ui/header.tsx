@@ -66,7 +66,7 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className="flex md:gap-5">
+        <div className="flex gap-2 md:gap-5">
           <ButtonTheme />
           <LoginMenu />
           <CartMenu />

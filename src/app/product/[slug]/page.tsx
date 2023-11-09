@@ -40,14 +40,14 @@ export default async function ProductDetailPage({
   if (!product) return null
 
   return (
-    <div className="flex flex-col gap-8 md:px-24">
-      <div className="space-y-8 md:flex md:gap-8 md:space-y-0 lg:h-[43.625rem]">
+    <div className="flex flex-col gap-8 dark:text-white md:px-24">
+      <div className="space-y-8 md:gap-8 lg:flex lg:h-[43.625rem] lg:space-y-0">
         <ProductImages name={product.name} imageUrls={product.imageUrls} />
 
-        <div className="space-y-8 md:rounded-lg md:bg-accent md:px-5 md:py-10">
+        <div className="space-y-8 md:rounded-lg md:bg-light-accent md:px-5 md:py-10 dark:md:bg-accent">
           <ProductInfo product={computeProductTotalPrice(product)} />
 
-          <Badge className="mx-5 flex items-center justify-between rounded-lg bg-accent px-5 py-2 md:bg-[#2A2A2A]">
+          <Badge className="mx-5 flex items-center justify-between rounded-lg bg-light-active-accent px-5 py-2 dark:bg-accent dark:md:bg-[#2A2A2A]">
             <div className="flex items-center gap-3">
               <TruckIcon />
 

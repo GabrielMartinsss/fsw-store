@@ -85,7 +85,7 @@ export default function Cart() {
             <p>{formatedCartTotalPrice}</p>
           </div>
           <Button
-            className="mt-8 font-bold uppercase"
+            className="mt-8 font-bold uppercase text-white"
             onClick={handleFinishPurchaseClick}
           >
             Finalizar compra

@@ -16,8 +16,8 @@ export default function ProductImages({ name, imageUrls }: ProductImagesProps) {
   }
 
   return (
-    <div className="flex flex-col md:relative md:flex-1 ">
-      <div className="flex h-[380px] w-full items-center justify-center bg-accent md:h-full md:rounded-xl">
+    <div className="flex flex-col lg:relative lg:flex-1 ">
+      <div className="flex h-[380px] w-full items-center justify-center bg-light-accent dark:bg-accent md:rounded-lg lg:h-full lg:rounded-xl">
         <Image
           src={curentImage}
           alt={name}
@@ -29,11 +29,11 @@ export default function ProductImages({ name, imageUrls }: ProductImagesProps) {
         />
       </div>
 
-      <div className="mt-8 grid grid-cols-4 gap-3 px-5 md:absolute md:grid-cols-2 lg:absolute lg:grid-cols-1">
+      <div className="mt-8 grid grid-cols-4 gap-3 px-5 lg:absolute lg:grid-cols-2 xl:absolute xl:grid-cols-1">
         {imageUrls.map((imageUrl) => (
           <button
             key={imageUrl}
-            className={`flex h-[100px] items-center justify-center rounded-lg bg-accent md:h-[4.8125rem] md:w-[4.8125rem] md:rounded-2xl md:bg-zinc-950 ${
+            className={`flex h-[100px] items-center justify-center rounded-lg bg-light-accent dark:bg-accent lg:h-[4.8125rem]  lg:w-[4.8125rem] lg:rounded-2xl lg:bg-zinc-950 ${
               imageUrl === curentImage && 'border-2 border-solid border-primary'
             }`}
             onClick={() => handleImageClick(imageUrl)}

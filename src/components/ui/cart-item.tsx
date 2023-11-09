@@ -34,7 +34,7 @@ export default function CartItem({ product }: CartItemProps) {
   return (
     <div className="flex justify-between">
       <div className="flex items-center gap-4">
-        <div className="flex h-[77px] w-[77px] items-center justify-center rounded-lg bg-accent">
+        <div className="flex h-[77px] w-[77px] items-center justify-center rounded-lg bg-light-accent dark:bg-accent">
           <Image
             src={product.imageUrls[0]}
             width={0}

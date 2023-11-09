@@ -28,7 +28,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
   }
 
   return (
-    <div className="flex flex-col px-5 md:max-w-xs lg:max-w-md">
+    <div className="flex flex-col px-5 lg:max-w-md">
       <h2 className="text-lg">{product.name}</h2>
 
       <div className="flex items-center gap-1">
@@ -58,6 +58,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         <Button
           size="icon"
           variant="outline"
+          className="bg-light-active-accent"
           onClick={handleDecreaseQuantityClick}
         >
           <ArrowLeftIcon size={16} />
@@ -68,6 +69,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         <Button
           size="icon"
           variant="outline"
+          className="bg-light-active-accent"
           onClick={handleIncreaseQuantityClick}
         >
           <ArrowRightIcon size={16} />
@@ -80,7 +82,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
       </div>
 
       <Button
-        className="mt-8 font-bold uppercase"
+        className="mt-8 font-bold uppercase text-white"
         onClick={handleAddProductToCartClick}
       >
         Adicionar ao carrinho
