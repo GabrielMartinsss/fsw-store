@@ -5,6 +5,7 @@ import CartMenu from '../cart-menu'
 import { Button } from './button'
 import { Separator } from './separator'
 import LoginMenu from './login-menu'
+import ButtonTheme from './buttonTheme'
 
 export default function Header() {
   return (
@@ -65,7 +66,8 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className="flex md:gap-7">
+        <div className="flex md:gap-5">
+          <ButtonTheme />
           <LoginMenu />
           <CartMenu />
         </div>
