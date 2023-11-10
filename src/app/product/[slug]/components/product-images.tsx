@@ -33,7 +33,7 @@ export default function ProductImages({ name, imageUrls }: ProductImagesProps) {
         {imageUrls.map((imageUrl) => (
           <button
             key={imageUrl}
-            className={`flex h-[100px] items-center justify-center rounded-lg bg-light-accent dark:bg-accent lg:h-[4.8125rem]  lg:w-[4.8125rem] lg:rounded-2xl lg:bg-zinc-950 ${
+            className={`flex h-[100px] items-center justify-center rounded-lg bg-light-accent dark:bg-accent lg:h-[4.8125rem]  lg:w-[4.8125rem] lg:rounded-2xl lg:bg-light-active-accent dark:lg:bg-zinc-950 ${
               imageUrl === curentImage && 'border-2 border-solid border-primary'
             }`}
             onClick={() => handleImageClick(imageUrl)}
