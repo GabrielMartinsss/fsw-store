@@ -18,7 +18,7 @@ export default function OrderProductItem({
 
   return (
     <div className="flex items-center gap-4">
-      <div className="flex h-[4.8125rem] min-h-[4.8125rem] w-[4.8125rem] min-w-[4.8125rem] items-center justify-center rounded-lg bg-accent">
+      <div className="flex h-[4.8125rem] min-h-[4.8125rem] w-[4.8125rem] min-w-[4.8125rem] items-center justify-center rounded-lg bg-light-accent dark:bg-accent">
         <Image
           src={orderProduct.product.imageUrls[0]}
           width={0}
@@ -31,7 +31,7 @@ export default function OrderProductItem({
 
       <div className="flex h-[4.8125rem] flex-1 flex-col justify-between md:flex-row md:items-center">
         <div className="space-y-3">
-          <p className="rounded-sm bg-accent px-4 text-center text-[0.625rem] md:w-fit ">
+          <p className="rounded-sm bg-light-accent px-4 text-center text-[0.625rem] dark:bg-accent md:w-fit ">
             Vendido e entregue por: <span className="font-bold">FWS Store</span>
           </p>
 

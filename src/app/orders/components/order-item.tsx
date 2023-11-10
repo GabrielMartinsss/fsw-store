@@ -33,9 +33,9 @@ function createOrderNumber(number: number): string {
 
 export default function OrderItem({ order, index }: OrderItemProps) {
   return (
-    <Card>
+    <Card className="border-light-active-accent dark:border-accent">
       <Accordion type="single" className="w-full" collapsible>
-        <AccordionItem value={order.id} className="px-5">
+        <AccordionItem value={order.id} className="border-none px-5">
           <AccordionTrigger className="gap-10">
             <div className="flex flex-col gap-1 text-left">
               <p className="text-sm font-bold uppercase">Número do pedido</p>
