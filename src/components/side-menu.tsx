@@ -42,7 +42,7 @@ export default function SideMenu() {
 
         <SheetContent
           side="left"
-          className="dark:bg-dark-background border-light-accent flex flex-col bg-background text-accent dark:border-accent dark:text-white"
+          className="flex flex-col border-light-accent bg-background text-accent dark:border-accent dark:bg-dark-background dark:text-white"
         >
           <SheetHeader className="text-left text-lg font-semibold">
             {status === 'authenticated' && data?.user && (
