@@ -31,6 +31,8 @@ export async function POST(req: Request) {
       },
     )
 
+    const lineItems = sessionWithLineItems.line_items
+
     await prismaClient.order.update({
       where: {
         id: session.metadata?.orderId,
