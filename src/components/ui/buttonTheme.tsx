@@ -9,7 +9,7 @@ export default function ButtonTheme() {
   useEffect(() => {
     document.documentElement.classList.contains('dark')
       ? setTheme('dark')
-      : setTheme('')
+      : setTheme(null)
   }, [])
 
   function toogleTheme() {
