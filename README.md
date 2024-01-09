@@ -2,8 +2,8 @@
 
 
 <h2 align='center'>💻 Project</h2>
-<p align='center'>Responsive shopping application </br>
-using Oauth and stripe api </p>
+<p align='center'>Aplicativo de compras responsivo </br>
+usando Oauth e Stripe</p>
 
 
 <h2 align='center'>⚙ Tecnologias </h2>
