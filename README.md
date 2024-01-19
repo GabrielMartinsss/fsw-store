@@ -15,19 +15,20 @@ Ao decorrer do desenvolvimento do projeto, pude adquirir conhecimento em:
 
 - **Integração com Banco de Dados:** Conexão com o banco de dados, para salvar informações de produtos, usuario, sessão, etc. 
 
-- **Login com Google:** Fazer login com Google usando OAuth.
+- **Autenticação com Google:** Fazer login com Google usando OAuth.
 
 - **Integração com Stripe:** Aprendi a integrar a aplicação com o Stripe, permitindo que os usuários faça o checkout das compras.
 
 - **Deploy da Aplicação:** Fiz o processo completo, desde o desenvolvimento até o deploy, garantindo que a aplicação estivesse pronta para uso em um ambiente de produção.
 
 ## ⚙ Tecnologias
-<a href="https://skillicons.dev">
-  <img src="https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,prisma,figma" />
-</a>
+<img src="https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,prisma,figma" />
+
+NextJS, React, Typescript, Tailwind, Prisma e Figma
 
 ## Ambiente de Deploy
 <img src="https://skillicons.dev/icons?i=vercel,supabase" />
+Vercel e Supabase
 
 ## Preview do Projeto
 ### Dark mode
